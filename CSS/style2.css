@@ -1,0 +1,655 @@
+html, body {
+    height: 100%; 
+    width: 100%;
+}
+
+body {
+  background-image: url('../IMG/galaxy-3608029.jpeg');
+  color: none;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* background-size: 100% 100%; */
+  background-size: cover;
+  background-position: center;
+  overflow-x: hidden;
+}
+
+.blackB {
+    background-color: rgba(0, 0, 0, 0.431);    
+}
+
+
+
+/* NAV */
+
+/* #divVert {
+    position: relative;
+}
+
+#lignevert {
+    position: absolute;
+    margin: 100px 0 0 40%;
+} */
+
+.nav-item {
+    background-color: transparent;
+}
+
+.nav {
+    font-size: 1.4rem;
+}
+
+.nav {
+    background-color: transparent;
+
+}
+
+/* DESTINATION */
+
+/* https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_areamap */
+
+.bg_info_planet{
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 50;
+}
+
+.bigPlanet {
+  display: none;
+}
+
+/* lune */
+#bigLune {
+  display: none;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  z-index: 100;
+  animation: lunebig 1s;
+}
+
+#onclickLune {
+  width: 100%;
+}
+
+
+@keyframes lunebig {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* mars */
+#bigMars {
+  display: none;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  z-index: 100;
+  animation: marsbig 1s;
+}
+
+@keyframes marsbig {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+#onclickMars {
+  width: 100%;
+}
+
+/* saturne */
+#bigSaturne {
+  display: none;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  z-index: 100;
+  animation: saturnebig 1s;
+}
+
+@keyframes saturnebig {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+#onclickSaturne {
+  width: 90%;
+  margin-left: auto;
+}
+
+/* pluton */
+#bigPluton {
+  display: none;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  z-index: 100;
+  animation: plutonbig 1s;
+}
+
+@keyframes plutonbig {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+#onclickPluton{
+  width: 100%;
+}
+
+/* PILOTES */
+
+#pilotetourne {
+  animation-name: tourne360;
+  animation-duration: 2s;
+}
+
+@keyframes tourne360 {
+  0%{
+    transform: rotate3d(0);
+  }
+  100%{
+    transform: rotate3d(10, 80, 10, 360deg);  
+  }
+}
+
+#techDev {
+  width: 10%;
+  margin-left: 55%;
+}
+
+#techDev a {
+  animation: colo 10s infinite;
+  width: 15%;
+  min-width: 150px;
+  border-radius: 50%;
+  margin-left: 90%;
+}
+
+@keyframes colo {
+  0% {background-color: red;}
+  25%{background-color:yellow;}
+  50%{background-color:green;}
+  75%{background-color:brown;}
+  100% {background-color: red;}
+}
+
+#techDevTourne, #techDev {
+  animation-name: techDevtourne;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  /* https://codepen.io/n0rmand0/pen/qVrMeG */
+}
+
+/* @keyframes techDevtourne {
+  0% {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+
+  100% {
+    transform: perspective(1000px) rotateY(360deg);
+  }
+} */
+
+
+#raphP {
+  /* transform: rotate(1turn);
+  transition: 3s; */
+  animation: rollnouveau 3s;
+  animation-iteration-count: 1;
+  /* https://developer.mozilla.org/fr/docs/Web/CSS/animation-iteration-count */
+}
+
+@keyframes rollnouveau {
+  0% {
+    transform: rotate(0);
+  }
+
+  
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#danP {
+  /* transform: skew(90deg);
+  transition: 20s; */
+  animation: skewnouveau 10s;
+}
+@keyframes skewnouveau {
+  0% {
+    transform: skew(0);
+  }
+  10% {
+    transform: scale(0.5) translate(-100%, -100%);
+  }
+  50% {
+    transform: skew(90deg);
+  }
+  
+  /* 0% {
+    transform: skew(0);
+  }
+  100% {
+    transform: skew(90deg);
+  } */
+}
+
+
+#nicoP {
+  animation: rollnouveau 3s;
+  animation-iteration-count: 1;
+}
+
+
+/* FOOTER */
+
+footer{
+  background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 1.5)),
+                   /*url("fondfooter.png");*/
+ }
+
+/* strong{
+  color: yellow;
+ } */
+
+.imgfooter{
+  width: 100%;
+  display: flex;
+  padding-top: 30px;
+  padding-bottom: 30px;
+ }
+
+ /* #astrofooter {
+  width: 500;
+} */
+
+.reseau{
+  max-width: 15%;
+  padding: 8;margin: 0 15px;
+  padding-bottom: 30px;
+ }
+
+.hr1{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid;
+  color: white;
+  width: 35%;
+ }
+
+.hr2{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid;
+  color: white;
+  width: 60%;
+ }
+
+.hr3{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid;
+  color: white;
+  width: 70%;
+}
+.hr4{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid;
+  color: white;
+  width: 100%;
+}
+/* 
+hr{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid;
+  color: transparent;
+  width: 100%;
+} */
+
+.butenvoie{
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+ 
+
+
+p, ul, li{
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+h1{
+  color: #fff;
+  font-size: 2rem;
+}
+
+h2{
+  color: rgb(115, 230, 8);
+  font-size: 2rem;
+}
+
+h3{
+  color: #fff;
+  font-size: 2.5rem;
+}
+
+#img_logo{
+  width: 100%;
+}
+
+.reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: all 2s ease;
+}
+.reveal.active{
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+
+
+
+@media (max-width:768px) {
+  #collapsibleNavbar .text-center {
+    text-align: left!important;
+  }
+}
+
+@media (min-width: 768px) {
+ 
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  #techDev {
+    margin-left: 70%;
+  }
+
+  #vaisseau_accueil, #saturne, #lune, #pluton, #mars {
+    left: 25%;
+  }
+}
+
+
+
+/* footer */
+h3 {
+  font-size: 1rem;
+}
+.txtfooter {
+  font-size: 1rem;
+}
+
+@media (min-width: 992px) {
+ 
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  } 
+
+
+  /* footer */
+
+  h3 {
+    font-size: 3rem;
+  }
+
+  .txtfooter {
+    font-size: 2rem;
+  }
+}
+
+
+
+@media (min-width: 1200px) {
+  
+  h1 {
+    font-size: 5rem;
+  }
+
+  h2 {
+    font-size: 5rem;
+  }
+
+  #vaisseau_accueil {
+    width: 100%;
+    left: 50%;
+  }
+
+  /* #lune, #mars, #pluton {
+    top: 30%;
+    left: 70%;
+  } */
+
+
+  /* footer */
+
+  h3 {
+    font-size: 3rem;
+  }
+  .txtfooter {
+    font-size: 2rem;
+  }
+
+}
+
+
+
+    
+
+
+/* RESERVER */
+
+/* #centrerDiv {
+  justify-items: center;
+} */
+
+
+    
+/* ACCUEIL TEST */
+
+/* text auto */
+
+#textAuto {
+  margin-left: 10%;
+}
+
+/* #textAuto a {
+  color: #2600ff;
+} */
+
+.pinkBg {
+  background-color: #3f18ed!important;
+  background-image: linear-gradient(90deg, #6e55fd, #2600ff);
+}
+
+.btn2{
+  width: 50%;
+}
+
+.intro-banner-vdo-play-btn{
+  height:60px;
+  width:60px;
+  position:absolute;
+  top:6%;
+  left:5%;
+  text-align:center;
+  margin:-30px 0 0 -30px;
+  border-radius:100px;
+  z-index:1
+}
+
+.intro-banner-vdo-play-btn i{
+  line-height:56px;
+  font-size:30px
+}
+
+.intro-banner-vdo-play-btn .ripple{
+  position:absolute;
+  width:160px;
+  height:160px;
+  z-index:-1;
+  left:50%;
+  top:50%;
+  opacity:0;
+  margin:-80px 0 0 -80px;
+  border-radius:100px;
+  -webkit-animation:ripple 1.8s infinite;
+  animation:ripple 1.8s infinite
+}
+
+@-webkit-keyframes ripple{
+  0%{
+      opacity:1;
+      -webkit-transform:scale(0);
+      transform:scale(0)
+  }
+  100%{
+      opacity:0;
+      -webkit-transform:scale(1);
+      transform:scale(1)
+  }
+}
+@keyframes ripple{
+  0%{
+      opacity:1;
+      -webkit-transform:scale(0);
+      transform:scale(0)
+  }
+  100%{
+      opacity:0;
+      -webkit-transform:scale(1);
+      transform:scale(1)
+  }
+}
+.intro-banner-vdo-play-btn .ripple:nth-child(2){
+  animation-delay:.3s;
+  -webkit-animation-delay:.3s
+}
+.intro-banner-vdo-play-btn .ripple:nth-child(3){
+  animation-delay:.6s;
+  -webkit-animation-delay:.6s
+}
+
+@keyframes fadeOut {
+  from {
+          height:0;
+          width:0;
+          opacity:0;
+      }
+  to {
+      opacity:1;
+      width:auto;
+      height:auto;
+  }
+}
+
+#accueilun {
+  
+  /* width: 100px; */
+/* height: 100px; */
+/* background: red; */
+/* position: relative; */
+animation: disappear 5s infinite;
+}
+
+@keyframes disappear {
+from {opacity: 1;}
+to {opacity: 0;}
+}
+
+#bg_croisiere {
+background: rgba(0, 0, 0, 0.5);
+z-index: 50;
+animation: appear 15s;
+}
+
+@keyframes appear {
+from {opacity: 0;}
+to {opacity: 1;}
+}
+
+/* card */
+.ratings i {
+  font-size: 16px;
+  color: red
+}
+
+.strike-text {
+  color: red;
+  text-decoration: line-through
+}
+
+.product-image {
+  width: 100%
+}
+
+.dot {
+  height: 7px;
+  width: 7px;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-top: 3px;
+  background-color: blue;
+  border-radius: 50%;
+  display: inline-block
+}
+
+.spec-1 {
+  color: #fff;
+  font-size: 25px
+}
+
+h5 {
+  font-weight: 400
+}
+
+.para {
+  font-size: 10px!important;
+}
+
+.titre2{
+  font-size: 35px;
+}
+
+
+/* FIN DE INDEX.HTML */
+
+.btnred{
+  background-color: red;
+  color: #fff;
+}
+
+.btnpanier{
+  background-color: green;
+  color: #fff;
+  
+}
+#pastille {
+  display: inline-block;
+  text-align: center;
+  background-color: #63748e;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 12px;
+  line-height: 16px;
+  width: 16px;
+  height: 16px;
+  font-weight: 700;
+  position: absolute;
+}

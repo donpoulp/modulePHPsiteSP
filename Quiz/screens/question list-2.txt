@@ -1,0 +1,41 @@
+
+ q-6
+ How many squares are there in the following figure?
+ 35
+ 30
+ 40
+ 50
+ ans - 40
+
+ q-7
+ Count the triangles in picture below.
+ 7
+ 9
+ 12
+ 13
+ ans - 13
+
+ q-8
+ Windows, macOS, and Linux are examples of ________.?
+ web browsers
+ mobile devices
+ filmy heroines
+ operating systems
+ ans - operating systems
+
+ q-9
+ What does "GUI" stand for?
+ Global user index
+ Graphical user interface
+ golu use iphone
+ ans - Graphical user interface
+
+ q-10
+ mark zuckerberg is the owner of  ?
+ facebook
+ google
+ linux
+ linkedin
+ ans - facebook
+
+

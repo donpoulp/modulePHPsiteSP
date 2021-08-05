@@ -1,0 +1,33 @@
+ 
+ *** Questions List ***
+
+ Q.1: Which month comes right before june ?
+       option 0 : may
+       option 1 : september
+       option 2 : july
+       option 3 : august
+
+ Q.2: What color is a banana?
+       option 0 : red
+       option 1 : yellow
+       option 2 : white 
+       option 3 : blue
+
+Q.3: 3 + 4 = 7 ?
+       option 0 : true
+       option 1 : false
+
+
+Q.4: What time of day do we have breakfast?
+      option 0 : In the afternoon
+      option 1 : In the evening
+      option 2 : In the morning
+
+Q.5: What is 2 + 6?
+      option 0 : 99
+      option 1 : 56
+      option 2 : 16
+      option 3 : 78
+    
+
+

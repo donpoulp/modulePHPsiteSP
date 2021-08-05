@@ -1,0 +1,525 @@
+html, body {
+    height: 100%; 
+    width: 100%;
+}
+
+body {
+  background-image: url('../IMG/galaxy-3608029.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* background-size: 100% 100%; */
+  background-size: cover;
+  background-position: center;
+  overflow-x: hidden;
+}
+
+/* NAV */
+
+#divVert {
+    position: relative;
+}
+
+#lignevert {
+    position: absolute;
+    margin: 100px 0 0 40%;
+}
+
+.nav-item {
+    background-color: transparent;
+}
+
+.nav {
+    font-size: 1.4rem;
+}
+
+.nav {
+    background-color: transparent;
+
+}
+
+.blackB {
+    background-color: rgba(0, 0, 0, 0.431);    
+}
+
+#techDev a {
+  animation: colo 10s infinite;
+  width: 15%;
+  min-width: 150px;
+  border-radius: 50%;
+  margin-left: 90%;
+}
+
+@keyframes colo {
+  0% {background-color: red;}
+  25%{background-color:yellow;}
+  50%{background-color:green;}
+  75%{background-color:brown;}
+  100% {background-color: red;}
+}
+
+
+@media (max-width:768px) {
+  #collapsibleNavbar .text-center {
+    text-align: left!important;
+  }
+}
+
+
+/* INDEX - ACCUEIL */
+/* EN SAVOIR PLUS */
+
+@media (min-width: 768px) {
+  #vaisseau_accueil, #saturne, #lune, #pluton, #mars {
+    left: 25%;
+  }
+}
+
+@media (min-width: 1200px) {
+  #vaisseau_accueil,#lune, #mars, #pluton {
+    top: 50%;
+    left: 70%;
+  }
+
+  #lune {
+    width: 20%;
+    top: 10%;
+    left: 80%;
+  }
+  
+  #mars {
+    top: 10%;
+    left: 75%;
+  }
+
+  #saturne {
+    width: 50%;
+    top: 30%;
+    left: 50%;
+  }
+
+  #pluton {
+    width: 15%;
+    /* top: 70%; */
+    left: 80%;
+  }
+}
+
+
+
+#bg_info_planet{
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 50;
+}
+  
+/* DESTINATION */
+.bigPlanet {
+  display: none;
+}
+
+/* lune */
+#bigLune {
+  display: none;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  z-index: 100;
+  animation: lunebig 1s;
+}
+
+@keyframes lunebig {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* mars */
+#bigMars {
+  display: none;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  z-index: 100;
+  animation: marsbig 1s;
+}
+
+@keyframes marsbig {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* saturne */
+#bigSaturne {
+  display: none;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  z-index: 100;
+  animation: saturnebig 1s;
+}
+
+@keyframes saturnebig {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* pluton */
+#bigPluton {
+  display: none;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  z-index: 100;
+  animation: plutonbig 1s;
+}
+
+@keyframes plutonbig {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_areamap */
+
+/* RESERVER */
+
+/* #centrerDiv {
+  justify-items: center;
+} */
+
+/* PILOTES */
+
+#raphP {
+  /* transform: rotate(1turn);
+  transition: 3s; */
+  animation: roll 3s;
+  animation-iteration-count: 1;
+  /* https://developer.mozilla.org/fr/docs/Web/CSS/animation-iteration-count */
+}
+
+@keyframes roll {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#danP {
+  /* transform: skew(90deg);
+  transition: 20s; */
+  animation: skew 10s;
+}
+@keyframes skew {
+  0% {
+    transform: skew(0);
+  }
+  10% {
+    transform: scale(0.5) translate(-100%, -100%);
+  }
+  50% {
+    transform: skew(90deg);
+  }
+  
+  /* 0% {
+    transform: skew(0);
+  }
+  100% {
+    transform: skew(90deg);
+  } */
+}
+
+
+#nicoP {
+  animation: roll 3s;
+  animation-iteration-count: 1;
+}
+
+#rapha {
+  margin-left: 12%;
+}
+
+#dana {
+  margin-left: 47%;
+}
+
+#nicoa {
+  margin-left: 80%;
+}
+
+/* FOOTER */
+
+footer{
+  background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 1.5)),
+                   /*url("fondfooter.png");*/
+ }
+
+ strong{
+   color: yellow;
+ }
+
+ .imgfooter{
+   width: 100%;
+   display: flex;
+   padding-top: 30px;
+   padding-bottom: 30px;
+ }
+ .reseau{
+   max-width: 15%;
+   padding: 8;margin: 0 15px;
+   padding-bottom: 30px;
+ }
+ .hr1{
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+   border: 0;
+   border-top: 1px solid;
+   color: white;
+   width: 35%;
+ }
+ .hr2{
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+   border: 0;
+   border-top: 1px solid;
+   color: white;
+   width: 60%;
+ }
+.hr3{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid;
+  color: white;
+  width: 70%;
+}
+   hr{
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+   border: 0;
+   border-top: 1px solid;
+   color: transparent;
+   width: 100%;
+ }
+
+ .butenvoie{
+   padding-top: 40px;
+   padding-bottom: 20px;
+ }
+ 
+@media (min-width: 768px) {
+   em {
+     font-size: 2rem;
+   }
+   .txtfooter {
+     font-size: 1rem;
+   }
+ }
+ @media (min-width: 992px) {
+   em {
+     font-size: 3rem;
+   }
+   .txtfooter {
+     font-size: 2rem;
+   }
+ }
+ @media (min-width: 1200px) {
+   em {
+     font-size: 3rem;
+   }
+   .txtfooter {
+     font-size: 2rem;
+   }
+ }
+em{
+color: white;
+}
+
+
+
+   p, ul, li{
+     color: #fff;
+     font-size: 1.5rem;
+    }
+
+    h1{
+      color: #fff;
+      font-size: 2rem;
+    }
+
+    h2{
+      color: rgb(115, 230, 8);
+      font-size: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+      }
+    }
+
+    @media (min-width: 992px) {
+      h1 {
+        font-size: 3rem;
+      }
+
+      h2 {
+        font-size: 3rem;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      h1 {
+        font-size: 5rem;
+      }
+
+      h2 {
+        font-size: 5rem;
+      }
+
+    }
+
+
+    h3{
+      color: #fff;
+      font-size: 2.5rem;
+    }
+
+    #img_logo{
+      width: 100%;
+    }
+  
+/* ACCUEIL TEST */
+
+/* text auto */
+
+#textAuto {
+  margin-left: 10%;
+}
+
+/* #textAuto a {
+  color: #2600ff;
+} */
+
+.pinkBg {
+  background-color: #3f18ed!important;
+  background-image: linear-gradient(90deg, #6e55fd, #2600ff);
+}
+.intro-banner-vdo-play-btn{
+  height:60px;
+  width:60px;
+  position:absolute;
+  top:6%;
+  left:5%;
+  text-align:center;
+  margin:-30px 0 0 -30px;
+  border-radius:100px;
+  z-index:1
+}
+.intro-banner-vdo-play-btn i{
+  line-height:56px;
+  font-size:30px
+}
+.intro-banner-vdo-play-btn .ripple{
+  position:absolute;
+  width:160px;
+  height:160px;
+  z-index:-1;
+  left:50%;
+  top:50%;
+  opacity:0;
+  margin:-80px 0 0 -80px;
+  border-radius:100px;
+  -webkit-animation:ripple 1.8s infinite;
+  animation:ripple 1.8s infinite
+}
+
+@-webkit-keyframes ripple{
+  0%{
+      opacity:1;
+      -webkit-transform:scale(0);
+      transform:scale(0)
+  }
+  100%{
+      opacity:0;
+      -webkit-transform:scale(1);
+      transform:scale(1)
+  }
+}
+@keyframes ripple{
+  0%{
+      opacity:1;
+      -webkit-transform:scale(0);
+      transform:scale(0)
+  }
+  100%{
+      opacity:0;
+      -webkit-transform:scale(1);
+      transform:scale(1)
+  }
+}
+.intro-banner-vdo-play-btn .ripple:nth-child(2){
+  animation-delay:.3s;
+  -webkit-animation-delay:.3s
+}
+.intro-banner-vdo-play-btn .ripple:nth-child(3){
+  animation-delay:.6s;
+  -webkit-animation-delay:.6s
+}
+
+@keyframes fadeOut {
+  from {
+          height:0;
+          width:0;
+          opacity:0;
+       }
+  to {
+      opacity:1;
+      width:auto;
+      height:auto;
+  }
+}
+
+#accueilun {
+  
+  /* width: 100px; */
+/* height: 100px; */
+/* background: red; */
+/* position: relative; */
+animation: disappear 5s infinite;
+}
+
+@keyframes disappear {
+from {opacity: 1;}
+to {opacity: 0;}
+}
+
+#bg_croisiere {
+background: rgba(0, 0, 0, 0.5);
+z-index: 50;
+animation: appear 15s;
+}
+
+@keyframes appear {
+from {opacity: 0;}
+to {opacity: 1;}
+}
+
+
+
+
+/* FIN DE INDEX.HTML */
+
+.reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: all 2s ease;
+}
+.reveal.active{
+  transform: translateY(0px);
+  opacity: 1;
+}
+
