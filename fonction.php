@@ -3,7 +3,7 @@
 function affichePanier($idArticle)
 {
     // initialisation de la bdd
-    $bdd = new PDO('mysql:host=localhost:3307;dbname=livredor', 'raphael', 'petrozzi');
+    require 'headerDB.php';
     // importation de toute la bdd article
     $panier_affichP = $bdd->query('SELECT * FROM article');
     // boucles pour chaque ligne de ma bdd
@@ -36,7 +36,7 @@ function affichePanier($idArticle)
 function totalArticle($id, $quantite, $price)
 {
     // on initialise la bdd
-    $bdd = new PDO('mysql:host=localhost:3307;dbname=livredor', 'raphael', 'petrozzi');
+    require 'headerDB.php';
     // on recupere tout les element de notre bdd
     $panier_affichP = $bdd->query('SELECT * FROM article');
     // boucle pour chaque ligne de ma bdd

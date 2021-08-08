@@ -14,7 +14,7 @@
 <body>
     <?php
     // on ce connect a la base de données 
-    $bdd = new PDO('mysql:host=localhost:3307;dbname=livredor', 'raphael', 'petrozzi');
+    require 'headerDB.php';
 
     // on verifie que les infos du formulaire on bien été remplie avant de faire quoi que ce sois
     if (isset($_POST['nom']) && isset($_POST['commentaire'])) {
