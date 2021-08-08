@@ -13,7 +13,7 @@
 
 <body>
     <!-- ajout du header -->
-    <?php include("header.php") ?>
+    <?php require("header.php") ?>
 
 
     <!-- block hmtl du index -->
@@ -45,7 +45,7 @@
             </div>
         </div>
         <!-- ajout du footer -->
-        <?php include("footer.php") ?>
+        <?php require("footer.php") ?>
 
 
         <!-- script JS -->
