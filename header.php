@@ -14,6 +14,10 @@
     <!-- la navbar -->
     <nav class="navbar navbar-expand-md  navbar-dark">
         <a class="navbar-brand" href="index.php"><img src="IMG/logo.svg" alt="Logo" id="img_logo"></a>
+            <div class='col-sm-2'>
+                <!-- bouton ajout d'article -->
+                <a class="nav-link text-white text-center pl-4 border" href='register.php'>Connection<br><hr class='hr2'>S'inscrire</a>
+            </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>

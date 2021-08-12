@@ -23,10 +23,15 @@
         </div>
 
         <div class="container-fluid py-5 my-5 position-relative blackB" id="bg_croisiere">
-
             <div class="container">
 
-
+            <?php
+        if (isset($_GET['act5'])){
+            echo "<div>";
+            echo "<h1> vous êtes bien connecter </h1>";
+            echo "</div>";
+        }
+        ?>
                 <div class="row">
                     <h1 class="col text-center">CROISIERE STELLAIRE</h1>
                 </div>

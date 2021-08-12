@@ -136,3 +136,21 @@ function totalPanier()
         echo "<h4 class='mr-1 text-white text-center mt-3 mb-2 mr-3 ml-3'>Total panier =", number_format($total), " $ </h4><br>";
     }
 }
+
+function connection()
+{
+        require 'headerDB.php';
+        $username = $_REQUEST['username'];
+        $password = $_REQUEST['password'];
+        $r_client = $bdd->query("SELECT * FROM client");
+        while ($donnees = $r_client->fetch()){
+        if ($donnees['username'] == $username ){
+            if ($donnees['mdp'] == $password){
+            $_SESSION['username'] = $username;
+            // echo "<p>bravo tu est conneter</p>";
+            header("Location: index.php?act=5");
+            }
+        }
+    }
+    echo "<span class='erreur'>Le nom d'utilisateur ou le mot de passe est incorrect.</span>";
+}

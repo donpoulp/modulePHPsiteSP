@@ -653,3 +653,8 @@ h5 {
   font-weight: 700;
   position: absolute;
 }
+
+.erreur{
+  color: red;
+  /* font-size: 1.5rem; */
+}
