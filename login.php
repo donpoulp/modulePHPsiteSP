@@ -24,7 +24,7 @@ require 'headerDB.php'; ?>
             <div class="col-8 text-center">
             <?php require 'fonction.php';
     if (isset($_POST['username'])) {
-        connection();
+        connection($_POST['username'], $_POST['password']);
     }
     ?>
                 <form class="box" action="login.php" method="post">

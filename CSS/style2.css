@@ -638,7 +638,6 @@ h5 {
 .btnpanier{
   background-color: green;
   color: #fff;
-  
 }
 #pastille {
   display: inline-block;
@@ -657,4 +656,8 @@ h5 {
 .erreur{
   color: red;
   /* font-size: 1.5rem; */
+}
+
+.headerco{
+  background-color: rgba(0, 0, 0, 0.59); 
 }

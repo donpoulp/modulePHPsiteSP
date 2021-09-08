@@ -5,11 +5,11 @@ function affichePanier($idArticle)
     // initialisation de la bdd
     require 'headerDB.php';
     // importation de toute la bdd article
-    $panier_affichP = $bdd->query('SELECT * FROM article');
+    $panier_affichP = $bdd->query("SELECT * FROM article WHERE idarticle = '$idArticle'");
     // boucles pour chaque ligne de ma bdd
     while ($donnees = $panier_affichP->fetch()) {
         //  on verifie si l'id recu en parametre est le meme que l'id d'un article de notre base de donnees 
-        if ($idArticle == $donnees['idarticle']) {
+        // if ($idArticle == $donnees['idarticle']) {
 
             //on affiche l'article en reprenans les element de notre bdd  
             echo "<div class='row d-flex justify-content-around align-items-center'>";
@@ -30,7 +30,7 @@ function affichePanier($idArticle)
             echo "</div>";
             echo "</div>";
         }
-    }
+    // }
 }
 // fonction qui calcule le prix de larticle en fonction de ça quantité dans le panier
 function totalArticle($id, $quantite, $price)
@@ -38,11 +38,11 @@ function totalArticle($id, $quantite, $price)
     // on initialise la bdd
     require 'headerDB.php';
     // on recupere tout les element de notre bdd
-    $panier_affichP = $bdd->query('SELECT * FROM article');
+    $panier_affichP = $bdd->query("SELECT * FROM article WHERE idarticle = '$id'");
     // boucle pour chaque ligne de ma bdd
-    while ($donnees = $panier_affichP->fetch()) {
+    // while ($donnees = $panier_affichP->fetch()) {
         //  on verifie si l'id recu en parametre est le meme que l'id d'un article de notre base de donnees  
-        if ($id == $donnees['idarticle']) {
+        // if ($id == $donnees['idarticle']) {
             // on calcule le total avec les variables recu en parametre
             $total_article = $quantite * $price;
             echo "<div class='row d-flex justify-content-around align-items-center'>";
@@ -61,12 +61,11 @@ function totalArticle($id, $quantite, $price)
             echo "</div>";
             echo "</div>";
         }
-    }
-}
+//     }
+// }
 
 // fonction modif quantite qui verifie si l'article existe deja avant de le modifier sois il cree un nouvelle article sois si l'article est deja ajouter au panier il ajoute 1 en quantite
-function modifQuantite($id, $quantite, $prix, $ajout)
-{
+function modifQuantite($id, $quantite, $prix, $ajout){
     $existe = false;
     // si la session n'existe pas on cree une session panier
     if (!isset($_SESSION['panier'])) {
@@ -137,20 +136,48 @@ function totalPanier()
     }
 }
 
-function connection()
+function connection($username,$password)
 {
         require 'headerDB.php';
-        $username = $_REQUEST['username'];
-        $password = $_REQUEST['password'];
-        $r_client = $bdd->query("SELECT * FROM client");
-        while ($donnees = $r_client->fetch()){
-        if ($donnees['username'] == $username ){
+        $r_client = $bdd->query("SELECT mdp FROM client WHERE username = '$username'");
+        $donnees = $r_client->fetch();
+        //  if ($donnees['username'] == $username ){
             if ($donnees['mdp'] == $password){
-            $_SESSION['username'] = $username;
+                $_SESSION['username'] = $username;
             // echo "<p>bravo tu est conneter</p>";
             header("Location: index.php?act=5");
-            }
-        }
-    }
+    //         }
+    //     }
+    }else{
     echo "<span class='erreur'>Le nom d'utilisateur ou le mot de passe est incorrect.</span>";
+    }
+}
+
+function inscription($username,$email,$password)
+{
+        require 'headerDB.php';
+        $inscription = $bdd->query("SELECT username, email FROM client WHERE username = '$username' OR email ='$email'");
+        if( $inscription->fetch() == true){
+            echo "<div class='container-fluid text-center'>";
+            echo "<div class='sucess'>";
+            echo "<h3 class='erreur'>Le nom d'utilisateur ou l'adresse mail est déja utilisée ou incorect.</h3>";
+            echo "<p>Cliquez ici pour vous <a href='register.php'>réessayer</a></p>";
+            echo "</div>";
+            echo "</div>";
+            $inscription->closeCursor();
+        }else{
+        $register = $bdd->prepare('INSERT INTO client(id, username, email, mdp) VALUES(?, ?, ?, ?)');
+        $register->execute(array(NULL,$username, $email, $password));
+
+        echo "<div class='container d-flex text-center'>";
+        echo "<div class='row align-items-center h-100'>";
+        echo "<div class='col-12'>";
+        echo "<div class='h-100 justify-content-center'>";
+        echo "<h3>Vous êtes inscrit avec succès.</h3>";
+        echo "<p>Cliquez ici pour vous <a href='login.php'>connecter</a></p>";
+        echo "</div>";
+        echo "</div>";
+        echo "</div>";
+        echo "</div>";
+    }
 }

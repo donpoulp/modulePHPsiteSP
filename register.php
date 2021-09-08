@@ -1,5 +1,6 @@
 <?php require 'headercookie.php';
-require 'headerDB.php'; ?>
+require 'headerDB.php'; 
+require 'fonction.php'?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -17,7 +18,8 @@ require 'headerDB.php'; ?>
     <?php require("header.php") ?>
     <?php
 
-    if (isset($_REQUEST['username'], $_REQUEST['email'], $_REQUEST['password'])){
+    if (isset($_POST['username'])){
+       
         // // récupérer le nom d'utilisateur et supprimer les antislashes ajoutés par le formulaire
         // $username = stripslashes($_REQUEST['username']);
         // $username = mysqli_real_escape_string($bdd, $username); 
@@ -28,19 +30,7 @@ require 'headerDB.php'; ?>
         // $password = stripslashes($_REQUEST['password']);
         // $password = mysqli_real_escape_string($bdd, $password);
         //requéte SQL + mot de passe crypté
-        try {
-            //   on attribu un mode d'erreure lisible
-            $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $register = $bdd->prepare('INSERT INTO client(username, email, mdp) VALUES(?, ?, ?)');
-            $register->execute(array(($_POST['username']), ($_POST['email']), $_POST['password']));
-            echo "<div class='sucess'>
-                  <h3>Vous êtes inscrit avec succès.</h3>
-                  <p>Cliquez ici pour vous <a href='login.php'>connecter</a></p>
-            </div>";
-        } catch (PDOException $e) {
-            // si les donnees ne sont pas bonnes
-            echo 'Impossible de traiter les données. Erreur : ' . $e->getMessage();
-        }
+    inscription($_POST['username'],$_POST['email'],$_POST['password']);
     }else{
 
     ?>
@@ -53,7 +43,7 @@ require 'headerDB.php'; ?>
         <div class="row justify-content-center">
             <div class="col-8 text-center">
                 <!-- formulaire de creation d'article par la method post vers destination.php puis ma base de données -->
-                <form class="box" action="connect.php" method="post">
+                <form class="box" action="register.php" method="POST">
                     <div class='mt-2 mb-2'>
                     <input type="text" class="box-input" name="username" placeholder="Nom d'utilisateur" required />
                     </div>

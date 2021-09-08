@@ -12,12 +12,23 @@
     ?>
 
     <!-- la navbar -->
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark "> -->
+    <div class="bs-example headerco">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 text-right">
+                <input class="btn btn-primary btn-sm mt-2 mb-2" type="button" value="Connexion" onclick="window.location.href='login.php'"></input>
+                <input class="btn btn-outline-primary" type="button" value="S'inscrire" onclick="window.location.href='register.php'"></input>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- </nav> -->
     <nav class="navbar navbar-expand-md  navbar-dark">
         <a class="navbar-brand" href="index.php"><img src="IMG/logo.svg" alt="Logo" id="img_logo"></a>
-            <div class='col-sm-2'>
-                <!-- bouton ajout d'article -->
+            <!-- <div class='col-sm-2'>
                 <a class="nav-link text-white text-center pl-4 border" href='register.php'>Connection<br><hr class='hr2'>S'inscrire</a>
-            </div>
+            </div> -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>

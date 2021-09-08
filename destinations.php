@@ -1,5 +1,5 @@
 <?php require 'headercookie.php'; ?>
-<?php require 'headerDB.php' ?>
+<?php require 'headerDB.php'; ?>
 <!-- initialisation des header base de donnees et session -->
 <!DOCTYPE html>
 <html lang="fr">
