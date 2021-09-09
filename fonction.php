@@ -40,7 +40,7 @@ function totalArticle($id, $quantite, $price)
     // on recupere tout les element de notre bdd
     $panier_affichP = $bdd->query("SELECT * FROM article WHERE idarticle = '$id'");
     // boucle pour chaque ligne de ma bdd
-    // while ($donnees = $panier_affichP->fetch()) {
+    $donnees = $panier_affichP->fetch();
         //  on verifie si l'id recu en parametre est le meme que l'id d'un article de notre base de donnees  
         // if ($id == $donnees['idarticle']) {
             // on calcule le total avec les variables recu en parametre
@@ -180,4 +180,14 @@ function inscription($username,$email,$password)
         echo "</div>";
         echo "</div>";
     }
+}
+
+function getArticleById($id)
+{
+    // require 'headerDB.php';
+    // $req = "SELECT * from article WHERE id = :id";
+    // $stmt = $bdd->prepare($req);
+    // $stmt->bindValue
+
+ echo 'affichage de un seul article';
 }
