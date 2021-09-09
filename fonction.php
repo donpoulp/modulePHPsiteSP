@@ -181,3 +181,8 @@ function inscription($username,$email,$password)
         echo "</div>";
     }
 }
+
+// function getArticleById($id)
+// {
+//  echo 'affichage de un seul article';
+// }
