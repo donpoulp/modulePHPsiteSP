@@ -20,9 +20,9 @@ try{
             case "article" :
                 if(!empty($url[1])){
                 GetArticleById($url[1]);
-            }else{
+                }else{
                 throw new Exception ("Vous n'avez pas renseigner le numero d'article.");
-            }
+                }
             break;
             default :  throw new Exception ("La demande n'est pas valide ! verifier l'url.");
         }
