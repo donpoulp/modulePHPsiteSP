@@ -182,7 +182,12 @@ function inscription($username,$email,$password)
     }
 }
 
-// function getArticleById($id)
-// {
-//  echo 'affichage de un seul article';
-// }
+function getArticleById($id)
+{
+    // require 'headerDB.php';
+    // $req = "SELECT * from article WHERE id = :id";
+    // $stmt = $bdd->prepare($req);
+    // $stmt->bindValue
+
+ echo 'affichage de un seul article';
+}
