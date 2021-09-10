@@ -22,7 +22,7 @@ try{
                 }
         break;
         }
-        if ($access==true){ 
+        if (tokenAccess($url[1])){ 
             switch($url[2]){
                 case "articles" :  echo json_encode($donnees, JSON_PRETTY_PRINT);
                 break;

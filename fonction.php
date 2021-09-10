@@ -224,15 +224,11 @@ function getHistoCommById($id){
 }
 
 function tokenAccess($url){
-    global $access;
-    $i=0;
     require 'headerDB.php';
-    $reponse = $bdd->query("SELECT token FROM token");
-    while ($donnees = $reponse->fetchAll(PDO::FETCH_ASSOC)){
-    if ($url == $donnees[$i]['token']){
-        return $access = true;
-    }
-    $i++;
+    $reponse = $bdd->query("SELECT token FROM token WHERE token=$url");
+    $donnees = $reponse->fetchAll(PDO::FETCH_ASSOC);
+    if (!empty($donnees)){
+        return true;
     }
 }
 
