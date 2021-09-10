@@ -184,10 +184,9 @@ function inscription($username,$email,$password)
 
 function getArticleById($id)
 {
-    // require 'headerDB.php';
-    // $req = "SELECT * from article WHERE id = :id";
-    // $stmt = $bdd->prepare($req);
-    // $stmt->bindValue
-
- echo 'affichage de un seul article';
+    require 'headerDB.php';
+    $reponse = $bdd->query("SELECT * FROM article WHERE idarticle=$id");
+    $donnees = $reponse->fetchAll();
+    header('Content-Type: application/json');
+    echo json_encode($donnees, JSON_PRETTY_PRINT);
 }
