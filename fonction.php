@@ -186,7 +186,7 @@ function getArticleById($id)
 {
     require 'headerDB.php';
     $reponse = $bdd->query("SELECT * FROM article WHERE idarticle=$id");
-    $donnees = $reponse->fetchAll();
+    $donnees = $reponse->fetchAll(PDO::FETCH_ASSOC);
     header('Content-Type: application/json');
     echo json_encode($donnees, JSON_PRETTY_PRINT);
 }
@@ -195,7 +195,7 @@ function getHistoComm(){
     require 'headerDB.php';
     // Gestion des erreurs : PDO::ATTR_ERRMODE : rapport d'erreurs => PDO::ERRMODE_EXCEPTION : qui émet une exception
 
-    $reponse = $bdd->query("SELECT commande.idCommande, dateCommande, idClient, GROUP_CONCAT(nom) as article, SUM(article.prix) as PrixTtcArticles, SUM(article.prix)/1.20 as PrixHtArticles, SUM(commandeaddarticle.quantite) as nombreArticles
+    $reponse = $bdd->query("SELECT commande.idCommande, dateCommande, idClient, GROUP_CONCAT(nom) as article, SUM(article.prix) as PrixTtcArticles, SUM(article.prix)/1.20 as PrixHtArticles, SUM(commandeaddarticle.quantite) as nombreArticlesTest
     FROM commande INNER JOIN commandeaddarticle ON commande.idCommande=commandeaddarticle.idCommande
     INNER JOIN article ON commandeaddarticle.idArticle=article.idarticle 
     GROUP BY idCommande");
@@ -205,4 +205,33 @@ function getHistoComm(){
     $donnees = $reponse->fetchAll(PDO::FETCH_ASSOC); // PDO::FETCH_ASSOC => affiche uniquement les données sous forme de prixarticles = 105 et non 0(index) = 105
     header('Content-Type: application/json'); // On renvoie du json 
     echo json_encode($donnees, JSON_PRETTY_PRINT); // fonction PHP pour mettre en tab
+}
+
+function getHistoCommById($id){
+    require 'headerDB.php';
+    // Gestion des erreurs : PDO::ATTR_ERRMODE : rapport d'erreurs => PDO::ERRMODE_EXCEPTION : qui émet une exception
+
+    $reponse = $bdd->query("SELECT commande.idCommande, dateCommande, idClient, GROUP_CONCAT(nom) as article, SUM(article.prix) as PrixTtcArticles, SUM(article.prix)/1.20 as PrixHtArticles, SUM(commandeaddarticle.quantite) as nombreArticlesTest
+    FROM commande INNER JOIN commandeaddarticle ON commande.idCommande=commandeaddarticle.idCommande
+    INNER JOIN article ON commandeaddarticle.idArticle=article.idarticle 
+    WHERE commande.idCommande=$id");
+
+    // on créé la réponse = ou l'on va chercher la BDD et le langage SQL que l'on veut
+
+    $donnees = $reponse->fetchAll(PDO::FETCH_ASSOC); // PDO::FETCH_ASSOC => affiche uniquement les données sous forme de prixarticles = 105 et non 0(index) = 105
+    header('Content-Type: application/json'); // On renvoie du json 
+    echo json_encode($donnees, JSON_PRETTY_PRINT); // fonction PHP pour mettre en tab
+}
+
+function tokenAccess($url){
+    global $access;
+    $i=0;
+    require 'headerDB.php';
+    $reponse = $bdd->query("SELECT token FROM token");
+    while ($donnees = $reponse->fetchAll(PDO::FETCH_ASSOC)){
+    if ($url == $donnees[$i]['token']){
+        return $access = true;
+    }
+    $i++;
+    }
 }
