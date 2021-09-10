@@ -235,3 +235,12 @@ function tokenAccess($url){
     $i++;
     }
 }
+
+function getArticleByCategorie($categorie)
+{
+    require 'headerDB.php';
+    $reponse = $bdd->query("SELECT * FROM article WHERE categorie=$categorie");
+    $donnees = $reponse->fetchAll(PDO::FETCH_ASSOC);
+    header('Content-Type: application/json');
+    echo json_encode($donnees, JSON_PRETTY_PRINT);
+}

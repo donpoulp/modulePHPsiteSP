@@ -35,6 +35,15 @@ try{
                     }
                 break;
 
+                case "categorie" :
+                    if(!empty($url[3])) {
+                        GetArticleBycategorie($url[3]);
+                    }
+                    else{
+                        throw new Exception ("Vous n'avez pas renseigner le numero de Catégorie.");
+                    }
+                break;
+
                 case "commande" : 
                     if(!empty($url[3])){
                         getHistoCommById($url[3]);
