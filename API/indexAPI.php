@@ -2,9 +2,8 @@
 // require 'fonction.php';
 //www.monsite.fr/article
 //www.monsite.fr/index.php?demande = formation
-
-
 //www.monsite.fr/article/:id()
+
 require '../headerDB.php';
 require '../fonction.php';
 $reponse = $bdd->query("SELECT * FROM article");
@@ -16,7 +15,7 @@ try{
         switch($url[0]){
             case "articles" :  echo json_encode($donnees, JSON_PRETTY_PRINT);
             break;
-            
+
             case "article" :
                 if(!empty($url[1])){
                 GetArticleById($url[1]);
@@ -24,6 +23,10 @@ try{
                 throw new Exception ("Vous n'avez pas renseigner le numero d'article.");
                 }
             break;
+
+            case "commande" : getHistoComm();
+            break;
+            
             default :  throw new Exception ("La demande n'est pas valide ! verifier l'url.");
         }
     }else{
