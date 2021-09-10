@@ -7,7 +7,7 @@
 require '../headerDB.php';
 require '../fonction.php';
 $reponse = $bdd->query("SELECT * FROM article");
-$donnees = $reponse->fetchAll();
+$donnees = $reponse->fetchAll(PDO::FETCH_ASSOC);
 header('Content-Type: application/json');
 try{
     if(!empty($_GET['demande'])){
@@ -22,6 +22,15 @@ try{
                 }else{
                 throw new Exception ("Vous n'avez pas renseigner le numero d'article.");
                 }
+
+            case "categorie" :
+                if(!empty($url[1])) {
+                    GetArticleBycategorie($url[1]);
+                }
+                else{
+                    throw new Exception ("Vous n'avez pas renseigner le numero de Catégorie.");
+                }
+
             break;
 
             case "commande" : getHistoComm();

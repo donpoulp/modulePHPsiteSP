@@ -186,7 +186,7 @@ function getArticleById($id)
 {
     require 'headerDB.php';
     $reponse = $bdd->query("SELECT * FROM article WHERE idarticle=$id");
-    $donnees = $reponse->fetchAll();
+    $donnees = $reponse->fetchAll(PDO::FETCH_ASSOC);
     header('Content-Type: application/json');
     echo json_encode($donnees, JSON_PRETTY_PRINT);
 }
@@ -205,4 +205,13 @@ function getHistoComm(){
     $donnees = $reponse->fetchAll(PDO::FETCH_ASSOC); // PDO::FETCH_ASSOC => affiche uniquement les données sous forme de prixarticles = 105 et non 0(index) = 105
     header('Content-Type: application/json'); // On renvoie du json 
     echo json_encode($donnees, JSON_PRETTY_PRINT); // fonction PHP pour mettre en tab
+}
+
+function getArticleByCategorie($categorie)
+{
+    require 'headerDB.php';
+    $reponse = $bdd->query("SELECT * FROM article WHERE categorie=$categorie");
+    $donnees = $reponse->fetchAll(PDO::FETCH_ASSOC);
+    header('Content-Type: application/json');
+    echo json_encode($donnees, JSON_PRETTY_PRINT);
 }
