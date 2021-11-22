@@ -132,7 +132,7 @@ function totalPanier()
             // on stack le resultat dans une autre variables pour plus de facilite
             $total = $totalpanier + $total;
         }
-        echo "<h4 class='mr-1 text-white text-center mt-3 mb-2 mr-3 ml-3'>Total panier =", number_format($total), " $ </h4><br>";
+        echo "<h4 class='mr-1 text-white text-center mt-3 mb-2 mr-3 ml-3'>Total panier = ", number_format($total), " $ </h4><br>";
     }
 }
 

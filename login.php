@@ -23,11 +23,11 @@ require 'headerDB.php'; ?>
         <div class="row justify-content-center">
             <div class="col-8 text-center">
             <?php require 'fonction.php';
-    if (isset($_POST['username'])) {
+if (isset($_POST['username'])) {
         connection($_POST['username'], $_POST['password']);
     }
     ?>
-                <form class="box" action="login.php" method="post">
+    <form class="box" action="login.php" method="post">
                     <div class='mt-2 mb-2'>
                         <input type="text" class="box-input" name="username" placeholder="Nom d'utilisateur">
                     </div>

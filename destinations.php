@@ -46,15 +46,6 @@
                 <!-- bouton ajout d'article -->
                 <input class="btn btnred" onclick="window.location.href='formu.php'" type="button" value="Ajouter un arcticle">
             </div>
-            <div class="dropdown">
-                <!-- bouton panier -->
-                <button class="btn btnpanier dropdown-toggle" type="button" data-toggle="dropdown">pannier</button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Dompteurs</a>
-                    <a class="dropdown-item" href="#">Zoos</a>
-                    <a class="dropdown-item" href="#">Chasseurs</a>
-                </div>
-            </div>
         </div>
     </div>
 

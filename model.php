@@ -28,7 +28,7 @@
             </div> -->
             
             
-            <div class="row pt-3">
+            <!-- <div class="row pt-3">
                 <p class="col text-center mw-25">Naviguer . Cliquez . Voyager<br><br>
 
                 Notre entreprise vous proposera une expérience unique et inoubliable<br><br> 
@@ -40,7 +40,7 @@
             </div>
         </div>
 
-    </div>
+    </div> -->
 
     <?php include("footer.php")?>
         
